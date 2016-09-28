@@ -86,9 +86,7 @@ export default class Schedule {
         this.intervalId ? clearInterval(this.intervalId) : null;
     }
     runAt(time) {
-        if (typeof (this.func) === 'function') {
-            return console.log('first argument has to be function');
-        } else if (
+        if (
             time.split(':').length !== 2 ||
             time.split(':')[0].length !== 2 ||
             time.split(':')[1].length !== 2
@@ -118,9 +116,7 @@ export default class Schedule {
     scheduleAt(days, timeString) {
         let time = timeString;
         if (!time) time = '00:00';
-        if (typeof (this.func) === 'function') {
-            return console.log('first argument has to be function');
-        } else if (!Number.isInteger(days)) {
+        if (!Number.isInteger(days)) {
             return console.log('second argument has to be number, which will present days');
         } else if (
             time.split(':').length !== 2 ||
