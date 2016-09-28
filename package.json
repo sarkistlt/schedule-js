@@ -1,6 +1,6 @@
 {
   "name": "schedule-js",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Small library to execute function at specific time or by schedule.",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sarkistlt/timer.git"
+    "url": "https://github.com/sarkistlt/schedule-js.git"
   },
   "keywords": [
     "timer",
@@ -32,9 +32,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sarkistlt/timer/issues"
+    "url": "https://github.com/sarkistlt/schedule-js/issues"
   },
-  "homepage": "https://github.com/sarkistlt/timer#readme",
+  "homepage": "https://github.com/sarkistlt/schedule-js#readme",
   "devDependencies": {
     "babel-cli": "6.9.0",
     "babel-core": "6.9.0",
