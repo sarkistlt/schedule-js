@@ -1,6 +1,6 @@
 {
   "name": "schedule-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Small library to execute function at specific time or by schedule.",
   "main": "lib/index.js",
   "scripts": {
