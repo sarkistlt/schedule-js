@@ -30,6 +30,9 @@ Schedule.runAt('23:00', () => autoCatchClean.stop());
 - autoCatchClean.args 
 //setter to change arguments, you have to pass argumen/s in array: autoCatchClean.args = [arg1, arg2, arg3]
 
+- autoCatchClean.THIS 
+//you can bind passed function: autoCatchClean.THIS = this
+
 - autoCatchClean.scheduleAt(interval, time) 
 //schedule auto-run every "interval" first start at "time": autoCatchClean.scheduleAt('20s', '17:15')
 

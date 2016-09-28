@@ -6,6 +6,7 @@ export default class Schedule {
 
         this.function = funcToRun;
         this.arguments = args;
+        this.bind = false;
         this.timerIdR = false;
         this.timerIdS = false;
         this.interId = false;
@@ -19,8 +20,14 @@ export default class Schedule {
         this.function = newFunction;
     }
 
+    set THIS(bindWith) {
+        this.bind = bindWith;
+    }
+
     run(...args) {
-        this.function(...args);
+        let execute = this.function;
+        if (this.bind) execute = this.function.bind(this.bind);
+        execute(...args);
     }
 
     static runAt(time, func, ...args) {
@@ -50,7 +57,8 @@ export default class Schedule {
                         time.split(':')[1]
                     ) - now;
             }
-            setTimeout(func, tillFirstStart, ...args);
+
+            setTimeout(execute, tillFirstStart, ...args);
         }
     }
 
@@ -118,7 +126,8 @@ export default class Schedule {
         ) {
             return console.log('second argument has to be string, which will present time: "**:**"');
         } else {
-            let now = new Date(),
+            let execute = this.function,
+                now = new Date(),
                 tillFirstStart = new Date(
                         now.getFullYear(),
                         now.getMonth(),
@@ -135,7 +144,9 @@ export default class Schedule {
                         time.split(':')[1]
                     ) - now;
             }
-            this.timerIdR = setTimeout(this.function, tillFirstStart, ...this.arguments);
+
+            if (this.bind) execute = this.function.bind(this.bind);
+            this.timerIdR = setTimeout(execute, tillFirstStart, ...this.arguments);
         }
     }
 
@@ -156,7 +167,8 @@ export default class Schedule {
         ) {
             return console.log('third argument has to be string, which will present time: "**:**"');
         } else {
-            let now = new Date(),
+            let execute = this.function,
+                now = new Date(),
                 tillFirstStart = new Date(
                         now.getFullYear(),
                         now.getMonth(),
@@ -189,8 +201,9 @@ export default class Schedule {
                 return console.log('second argument has to be string ["number(ms || s || h || d)"]');
             }
 
+            if (this.bind) execute = this.function.bind(this.bind);
             this.timerIdS = setTimeout(() => {
-                this.interId = setInterval(this.function, interval, ...this.arguments);
+                this.interId = setInterval(execute, interval, ...this.arguments);
             }, tillFirstStart);
         }
     }
