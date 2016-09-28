@@ -1,0 +1,39 @@
+{
+  "name": "schedule-js",
+  "version": "1.0.0",
+  "description": "Small library to execute function at specific time or by schedule.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --presets babel-preset-es2015 --out-dir lib",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sarkistlt/timer.git"
+  },
+  "keywords": [
+    "timer",
+    "schedule",
+    "autorun",
+    "auto-run",
+    "schedule-js",
+    "setInterval",
+    "setTimeout",
+    "javaScript"
+  ],
+  "author": {
+    "name": "Sarkis Arutiunian (sarkis.tlt@gmail.com)"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarkistlt/timer/issues"
+  },
+  "homepage": "https://github.com/sarkistlt/timer#readme",
+  "devDependencies": {
+    "babel-cli": "6.9.0",
+    "babel-core": "6.9.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-stage-1": "^6.13.0"
+  }
+}
