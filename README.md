@@ -1,4 +1,7 @@
-Small package to schedule function execution at specific time:
+####under active development, if you have any suggestion, please let me know.
+
+Small package to schedule function execution at specific time.
+You can use this package on client and server side.
 
 ### Install
 ~~~sh
