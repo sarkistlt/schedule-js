@@ -32,13 +32,13 @@ export default class Schedule {
 
     static runAt(time, func, ...args) {
         if (typeof (func) !== 'function') {
-            return console.log('first argument has to be function');
+            return console.log('second argument has to be function');
         } else if (
             time.split(':').length !== 2 ||
             time.split(':')[0].length !== 2 ||
             time.split(':')[1].length !== 2
         ) {
-            return console.log('second argument has to be string, which will present time: "**:**"');
+            return console.log('first argument has to be string, which will present time: "**:**"');
         } else {
             let now = new Date(),
                 tillFirstStart = new Date(
@@ -58,7 +58,7 @@ export default class Schedule {
                     ) - now;
             }
 
-            setTimeout(execute, tillFirstStart, ...args);
+            setTimeout(func, tillFirstStart, ...args);
         }
     }
 
@@ -66,18 +66,18 @@ export default class Schedule {
         let time = timeString;
         if (!time) time = '00:00';
         if (typeof (func) !== 'function') {
-            return console.log('first argument has to be function');
+            return console.log('third argument has to be function');
         } else if (
             (inter.slice(-2) !== 'ms' && !Number.isInteger(+inter.slice(0, -1))) ||
             (inter.slice(-2) === 'ms' && !Number.isInteger(+inter.slice(0, -2)))
         ) {
-            return console.log('second argument has to be string ["number(ms || s || m || h || d)"]');
+            return console.log('first argument has to be string ["number(ms || s || m || h || d)"]');
         } else if (
             time.split(':').length !== 2 ||
             time.split(':')[0].length !== 2 ||
             time.split(':')[1].length !== 2
         ) {
-            return console.log('third argument has to be string, which will present time: "**:**"');
+            return console.log('second argument has to be string, which will present time: "**:**"');
         } else {
             let now = new Date(),
                 tillFirstStart = new Date(
@@ -109,7 +109,7 @@ export default class Schedule {
             } else if (inter.slice(-1) === 'd') {
                 interval = inter.slice(0, -1) * 86400000;
             } else {
-                return console.log('second argument has to be string ["number(ms || s || m || h || d)"]');
+                return console.log('first argument has to be string ["number(ms || s || m || h || d)"]');
             }
 
             setTimeout(() => setInterval(func, interval, ...args), tillFirstStart);
@@ -124,7 +124,7 @@ export default class Schedule {
             time.split(':')[0].length !== 2 ||
             time.split(':')[1].length !== 2
         ) {
-            return console.log('second argument has to be string, which will present time: "**:**"');
+            return console.log('first argument has to be string, which will present time: "**:**"');
         } else {
             let execute = this.function,
                 now = new Date(),
@@ -159,13 +159,13 @@ export default class Schedule {
             (inter.slice(-2) !== 'ms' && !Number.isInteger(+inter.slice(0, -1))) ||
             (inter.slice(-2) === 'ms' && !Number.isInteger(+inter.slice(0, -2)))
         ) {
-            return console.log('second argument has to be string ["number(ms || s || m || h || d)"]');
+            return console.log('first argument has to be string ["number(ms || s || m || h || d)"]');
         } else if (
             time.split(':').length !== 2 ||
             time.split(':')[0].length !== 2 ||
             time.split(':')[1].length !== 2
         ) {
-            return console.log('third argument has to be string, which will present time: "**:**"');
+            return console.log('second argument has to be string, which will present time: "**:**"');
         } else {
             let execute = this.function,
                 now = new Date(),
@@ -198,7 +198,7 @@ export default class Schedule {
             } else if (inter.slice(-1) === 'd') {
                 interval = inter.slice(0, -1) * 86400000;
             } else {
-                return console.log('second argument has to be string ["number(ms || s || m || h || d)"]');
+                return console.log('first argument has to be string ["number(ms || s || m || h || d)"]');
             }
 
             if (this.bind) execute = this.function.bind(this.bind);
