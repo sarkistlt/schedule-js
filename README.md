@@ -1,4 +1,3 @@
-#alpha version, package under active development, stable version will be pushed soon.
 Small package to schedule function execution at specific time:
 
 ### Install
