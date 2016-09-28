@@ -99,7 +99,7 @@ export default class Schedule {
             }
 
             if (inter.slice(-2) === 'ms') {
-                interval = inter.slice(0, -2);
+                interval = +inter.slice(0, -2);
             } else if (inter.slice(-1) === 's') {
                 interval = inter.slice(0, -1) * 1000;
             } else if (inter.slice(-1) === 'm') {
@@ -188,7 +188,7 @@ export default class Schedule {
             }
 
             if (inter.slice(-2) === 'ms') {
-                interval = inter.slice(0, -2);
+                interval = +inter.slice(0, -2);
             } else if (inter.slice(-1) === 's') {
                 interval = inter.slice(0, -1) * 1000;
             } else if (inter.slice(-1) === 'm') {
