@@ -64,6 +64,6 @@ Note that if you use static methods you can't stop timer, it will stopped only w
 
 - ```scheduleAt(interval, time)```: 'interval' has to be string as following: ```'12345[ms || s || m || h || d]'```, 'time' has to be string as following: ```'23:30'```
 - ```runAt(time)```: time has to be string as following: ```'23:30'```
-- ```static scheduleAt(interval, time, func[, arg1, arg2, ...])``` and ```static runAt(time, func[, arg1, arg2, ...])```: same logic as above, but third argument has to be function which you are going to run by schedule, and all arguments after "func" will be pass to function.
+- ```static scheduleAt(interval, time, func[, arg1, arg2, ...])``` and ```static runAt(time, func[, arg1, arg2, ...])```: same logic as above, but third argument has to be function which you are going to run by schedule, and all arguments after "func" will be passed to function.
 
 ####If you have any suggestion, please let me know.
