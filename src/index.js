@@ -16,7 +16,9 @@ export default class Schedule {
         return this.func;
     }
     static runAt(func, time) {
-        if (
+        if (typeof (func) !== 'function') {
+            return console.log('first argument has to be function');
+        } else if (
             time.split(':').length !== 2 ||
             time.split(':')[0].length !== 2 ||
             time.split(':')[1].length !== 2
@@ -46,7 +48,9 @@ export default class Schedule {
     static scheduleAt(func, days, timeString) {
         let time = timeString;
         if (!time) time = '00:00';
-        if (!Number.isInteger(days)) {
+        if (typeof (func) !== 'function') {
+            return console.log('first argument has to be function');
+        } else if (!Number.isInteger(days)) {
             return console.log('second argument has to be number, which will present days');
         } else if (
             time.split(':').length !== 2 ||
@@ -82,7 +86,9 @@ export default class Schedule {
         this.intervalId ? clearInterval(this.intervalId) : null;
     }
     runAt(time) {
-        if (
+        if (typeof (this.func) !== 'function') {
+            return console.log('You have to use function as argument in "new Schedule(arg)"');
+        } else if (
             time.split(':').length !== 2 ||
             time.split(':')[0].length !== 2 ||
             time.split(':')[1].length !== 2
@@ -112,7 +118,9 @@ export default class Schedule {
     scheduleAt(days, timeString) {
         let time = timeString;
         if (!time) time = '00:00';
-        if (!Number.isInteger(days)) {
+        if (typeof (this.func) !== 'function') {
+            return console.log('You have to use function as argument in "new Schedule(arg)"');
+        } else if (!Number.isInteger(days)) {
             return console.log('second argument has to be number, which will present days');
         } else if (
             time.split(':').length !== 2 ||
