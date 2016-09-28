@@ -71,7 +71,7 @@ export default class Schedule {
             (inter.slice(-2) !== 'ms' && !Number.isInteger(+inter.slice(0, -1))) ||
             (inter.slice(-2) === 'ms' && !Number.isInteger(+inter.slice(0, -2)))
         ) {
-            return console.log('second argument has to be string ["number(ms || s || h || d)"]');
+            return console.log('second argument has to be string ["number(ms || s || m || h || d)"]');
         } else if (
             time.split(':').length !== 2 ||
             time.split(':')[0].length !== 2 ||
@@ -109,7 +109,7 @@ export default class Schedule {
             } else if (inter.slice(-1) === 'd') {
                 interval = inter.slice(0, -1) * 86400000;
             } else {
-                return console.log('second argument has to be string ["number(ms || s || h || d)"]');
+                return console.log('second argument has to be string ["number(ms || s || m || h || d)"]');
             }
 
             setTimeout(() => setInterval(func, interval, ...args), tillFirstStart);
@@ -159,7 +159,7 @@ export default class Schedule {
             (inter.slice(-2) !== 'ms' && !Number.isInteger(+inter.slice(0, -1))) ||
             (inter.slice(-2) === 'ms' && !Number.isInteger(+inter.slice(0, -2)))
         ) {
-            return console.log('second argument has to be string ["number(ms || s || h || d)"]');
+            return console.log('second argument has to be string ["number(ms || s || m || h || d)"]');
         } else if (
             time.split(':').length !== 2 ||
             time.split(':')[0].length !== 2 ||
@@ -198,7 +198,7 @@ export default class Schedule {
             } else if (inter.slice(-1) === 'd') {
                 interval = inter.slice(0, -1) * 86400000;
             } else {
-                return console.log('second argument has to be string ["number(ms || s || h || d)"]');
+                return console.log('second argument has to be string ["number(ms || s || m || h || d)"]');
             }
 
             if (this.bind) execute = this.function.bind(this.bind);
